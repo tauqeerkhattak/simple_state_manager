@@ -2,7 +2,7 @@ import 'dart:async';
 
 abstract class StateController<T> {
   T? _currentValue;
-  final StreamController<T> _streamController = StreamController<T>();
+  final StreamController<T> _streamController = StreamController<T>.broadcast();
 
   T get state {
     if (_currentValue == null) {
